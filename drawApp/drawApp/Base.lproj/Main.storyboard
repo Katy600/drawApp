@@ -268,18 +268,6 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <rect key="contentStretch" x="0.25" y="0.0" width="1" height="1"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PyR-Fp-nAo">
-                                <rect key="frame" x="145" y="606" width="100" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" image="play_button">
-                                    <color key="titleColor" red="0.13936412919999999" green="0.1407439721" blue="0.1407439721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="playButton:" destination="Ldb-DP-e9u" eventType="touchUpInside" id="6Km-Qs-ZhS"/>
-                                    <action selector="playButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="ecu-Ke-BjY"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Someone is guessing your drawing....." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z91-Zh-dpg">
                                 <rect key="frame" x="-2" y="126" width="419" height="234"/>
                                 <fontDescription key="fontDescription" name="dotty" family="dotty" pointSize="40"/>
@@ -287,10 +275,24 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ftb-V2-4am">
-                                <rect key="frame" x="197" y="382" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ftb-V2-4am">
+                                <rect key="frame" x="189" y="314" width="20" height="20"/>
                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PyR-Fp-nAo">
+                                <rect key="frame" x="149" y="400" width="100" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" image="play_button">
+                                    <color key="titleColor" red="0.13936412919999999" green="0.1407439721" blue="0.1407439721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="PlayAgain:" destination="Ldb-DP-e9u" eventType="touchUpInside" id="dsF-yc-IZy"/>
+                                    <action selector="playButton:" destination="Ldb-DP-e9u" eventType="touchUpInside" id="6Km-Qs-ZhS"/>
+                                    <action selector="playButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="ecu-Ke-BjY"/>
+                                    <segue destination="9pv-A4-QxB" kind="show" identifier="showFirstViewController" id="yNC-Bh-4UK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -455,6 +457,7 @@
         <image name="question_tab_icon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="yNC-Bh-4UK"/>
         <segue reference="L3e-wh-rGV"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
