@@ -39,6 +39,7 @@ class ColorPickerViewController: UIViewController {
         currentColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0).cgColor
         performSegue(withIdentifier: "showDrawViewController2", sender: sender );
     }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDrawViewController2" {

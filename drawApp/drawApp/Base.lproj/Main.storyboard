@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -150,6 +150,29 @@
                                     <segue destination="49e-Tb-3d3" kind="show" identifier="backButton" id="L3e-wh-rGV"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Nt-og-81n">
+                                <rect key="frame" x="83" y="326" width="250" height="192"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g39-kg-ur3">
+                                        <rect key="frame" x="49" y="81" width="49" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="GREEN"/>
+                                        <connections>
+                                            <action selector="paintGreen:" destination="NU5-Hi-tNp" eventType="touchUpInside" id="4ho-DQ-JNg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pkg-Xv-fi8">
+                                        <rect key="frame" x="49" y="34" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="RED"/>
+                                        <connections>
+                                            <action selector="paintRed:" destination="NU5-Hi-tNp" eventType="touchUpInside" id="ah5-Vr-vyQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -196,6 +219,7 @@
                         <outlet property="currentWord" destination="nni-Hp-HCg" id="HSp-no-Rwz"/>
                         <outlet property="drawPage" destination="vAC-W5-FyP" id="Oky-vL-DbW"/>
                         <outlet property="nameLabel" destination="CkQ-NG-xkm" id="1gM-RF-OOp"/>
+                        <outlet property="paintRed" destination="Pkg-Xv-fi8" id="alD-1g-qTT"/>
                         <outlet property="submitButtonLabel" destination="3v2-Qg-hM5" id="DbR-zY-WZe"/>
                         <outlet property="test" destination="9sZ-e8-Z58" id="SWF-6u-yBn"/>
                     </connections>
@@ -215,85 +239,12 @@
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="1fI-Sa-BBK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ooY-yN-CmE">
-                                <rect key="frame" x="44" y="118" width="326" height="500"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jtx-BP-l1A">
-                                        <rect key="frame" x="100" y="430" width="126" height="52"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="52" id="eOz-pQ-by9"/>
-                                            <constraint firstAttribute="width" constant="126" id="s5Y-bZ-1ee"/>
-                                        </constraints>
-                                        <state key="normal" image="done_button"/>
-                                        <connections>
-                                            <action selector="closeColorPicker:" destination="gDJ-5y-hk5" eventType="touchUpInside" id="cOK-vf-OF3"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cs7-ZE-4WE">
-                                        <rect key="frame" x="34" y="42" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Red"/>
-                                        <connections>
-                                            <action selector="paintRed:" destination="gDJ-5y-hk5" eventType="touchUpInside" id="G8V-31-a8a"/>
-                                            <segue destination="NU5-Hi-tNp" kind="show" identifier="showDrawViewController2" id="xPL-rT-DNI"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kU1-Zx-zTh">
-                                        <rect key="frame" x="36" y="95" width="42" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Green"/>
-                                        <connections>
-                                            <action selector="paintGreen:" destination="gDJ-5y-hk5" eventType="touchUpInside" id="uXb-HC-CDH"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Jtx-BP-l1A" secondAttribute="bottom" constant="18" id="Uq3-kY-gQy"/>
-                                    <constraint firstItem="Jtx-BP-l1A" firstAttribute="centerX" secondItem="ooY-yN-CmE" secondAttribute="centerX" id="qAs-sz-QuJ"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ooY-yN-CmE" firstAttribute="top" secondItem="GTk-sj-hWG" secondAttribute="bottom" constant="98" id="1eE-l4-qmk"/>
-                            <constraint firstItem="ooY-yN-CmE" firstAttribute="centerY" secondItem="1fI-Sa-BBK" secondAttribute="centerY" id="UQr-w7-3WA"/>
-                            <constraint firstItem="ooY-yN-CmE" firstAttribute="leading" secondItem="1fI-Sa-BBK" secondAttribute="leadingMargin" constant="24" id="Yvb-pe-EKT"/>
-                            <constraint firstItem="ooY-yN-CmE" firstAttribute="centerX" secondItem="1fI-Sa-BBK" secondAttribute="centerX" id="uvQ-ri-oUl"/>
-                            <constraint firstItem="ooY-yN-CmE" firstAttribute="centerX" secondItem="1fI-Sa-BBK" secondAttribute="centerX" id="wRS-X1-8j6"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETr-Go-lo4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2286.9565217391305" y="-326.08695652173918"/>
-        </scene>
-        <!--submitViewController-->
-        <scene sceneID="fk9-W0-peS">
-            <objects>
-                <viewController title="submitViewController" id="t6U-mL-ATN" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ROZ-BS-Mkf"/>
-                        <viewControllerLayoutGuide type="bottom" id="8q1-ND-fal"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2fa-Hu-Xt4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="E2X-QO-NKM">
-                                <rect key="frame" x="192" y="267" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
-                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="muk-2v-NLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3045" y="-319"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -428,12 +379,11 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="75" y="-10"/>
         </scene>
     </scenes>
     <resources>
         <image name="background_graph_paper" width="375" height="667"/>
-        <image name="done_button" width="100" height="50"/>
         <image name="palette" width="70" height="82"/>
         <image name="pencil_tab_icon" width="30" height="30"/>
         <image name="play_button" width="100" height="50"/>
@@ -441,7 +391,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="L3e-wh-rGV"/>
-        <segue reference="xPL-rT-DNI"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -33,7 +33,7 @@ class DrawViewController: UIViewController, WebSocketDelegate {
     var moved = false
     var jsonData : Data!
     var timer = Timer()
-    var counter = 5
+    var counter = 10
     var drawingAllowed = true
     var timerFlash = Timer()
     var counterFlash = 3
@@ -214,6 +214,20 @@ class DrawViewController: UIViewController, WebSocketDelegate {
         }
         socket.write(data: jsonData)
     }
+    
+    @IBAction func closeColorPicker(_ sender: Any) {
+        self.view.removeFromSuperview()
+    }
+    
+        @IBAction func paintRed(_ sender: Any) {
+        currentColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0).cgColor
+    }
+    
+    @IBAction func paintGreen(_ sender: Any) {
+         currentColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0).cgColor
+    }
+    
+
 
 }
 
