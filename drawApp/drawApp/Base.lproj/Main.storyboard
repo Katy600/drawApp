@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -151,23 +151,55 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Nt-og-81n">
-                                <rect key="frame" x="83" y="326" width="250" height="192"/>
+                                <rect key="frame" x="79" y="123" width="250" height="192"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g39-kg-ur3">
-                                        <rect key="frame" x="49" y="81" width="49" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrC-og-9dT">
+                                        <rect key="frame" x="30" y="24" width="46" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="GREEN"/>
+                                        <state key="normal" title="Pink"/>
                                         <connections>
-                                            <action selector="paintGreen:" destination="NU5-Hi-tNp" eventType="touchUpInside" id="4ho-DQ-JNg"/>
+                                            <action selector="paintPink:" destination="NU5-Hi-tNp" eventType="touchUpInside" id="j9T-Iy-RQk"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pkg-Xv-fi8">
-                                        <rect key="frame" x="49" y="34" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6O-Ud-VSF">
+                                        <rect key="frame" x="36" y="69" width="42" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="RED"/>
+                                        <state key="normal" title="Green"/>
                                         <connections>
-                                            <action selector="paintRed:" destination="NU5-Hi-tNp" eventType="touchUpInside" id="ah5-Vr-vyQ"/>
+                                            <action selector="paintGreen:" destination="NU5-Hi-tNp" eventType="touchUpInside" id="NPc-Uo-an4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogc-xN-m6k">
+                                        <rect key="frame" x="34" y="124" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Blue"/>
+                                        <connections>
+                                            <action selector="paintBlue:" destination="NU5-Hi-tNp" eventType="touchUpInside" id="RkY-Id-7DX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKL-So-0Ly">
+                                        <rect key="frame" x="155" y="24" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Red"/>
+                                        <connections>
+                                            <action selector="paintRed:" destination="NU5-Hi-tNp" eventType="touchUpInside" id="znU-9m-tFE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxI-tn-Lgg">
+                                        <rect key="frame" x="155" y="69" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Black"/>
+                                        <connections>
+                                            <action selector="paintBlack:" destination="NU5-Hi-tNp" eventType="touchUpInside" id="3F5-EI-pPg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99O-61-6Rr">
+                                        <rect key="frame" x="160" y="118" width="44" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Yellow"/>
+                                        <connections>
+                                            <action selector="paintYellow:" destination="NU5-Hi-tNp" eventType="touchUpInside" id="CpO-c6-GZn"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -215,11 +247,11 @@
                     <connections>
                         <outlet property="clear" destination="rHM-28-mHV" id="ldl-0a-I9K"/>
                         <outlet property="clearButtonLabel" destination="rHM-28-mHV" id="GLd-iU-O95"/>
+                        <outlet property="colourWheel" destination="8Nt-og-81n" id="dhw-Q6-a35"/>
                         <outlet property="counterLabel" destination="2Pr-LP-NfC" id="uO6-O9-dlh"/>
                         <outlet property="currentWord" destination="nni-Hp-HCg" id="HSp-no-Rwz"/>
                         <outlet property="drawPage" destination="vAC-W5-FyP" id="Oky-vL-DbW"/>
                         <outlet property="nameLabel" destination="CkQ-NG-xkm" id="1gM-RF-OOp"/>
-                        <outlet property="paintRed" destination="Pkg-Xv-fi8" id="alD-1g-qTT"/>
                         <outlet property="submitButtonLabel" destination="3v2-Qg-hM5" id="DbR-zY-WZe"/>
                         <outlet property="test" destination="9sZ-e8-Z58" id="SWF-6u-yBn"/>
                     </connections>

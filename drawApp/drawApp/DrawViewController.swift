@@ -19,13 +19,6 @@ class DrawViewController: UIViewController, WebSocketDelegate {
     @IBOutlet weak var clear: UIButton!
     @IBOutlet var currentWord: UILabel!
     
-    @IBAction func showColorPicker(_ sender: Any) {
-        let colorPickerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "colorPickerId") as! ColorPickerViewController
-        self.addChildViewController(colorPickerViewController)
-        colorPickerViewController.view.frame = self.view.frame
-        self.view.addSubview(colorPickerViewController.view)
-        colorPickerViewController.didMove(toParentViewController: self)
-    }
     
     let socket = WebSocket(url: URL(string: "ws://localhost:3000/")!)
     var badText: String?
@@ -37,11 +30,9 @@ class DrawViewController: UIViewController, WebSocketDelegate {
     var drawingAllowed = true
     var timerFlash = Timer()
     var counterFlash = 3
-    var currentColor = UIColor(red: 0.26, green: 0.53, blue: 0.96, alpha: 1.0).cgColor
-
-   
+    var currentColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.0).cgColor
+    @IBOutlet var colourWheel: UIView!
     @IBOutlet var counterLabel: UILabel!
-   
     @IBOutlet var clearButtonLabel: UIButton!
     @IBOutlet var submitButtonLabel: UIButton!
     
@@ -59,6 +50,7 @@ class DrawViewController: UIViewController, WebSocketDelegate {
         socket.delegate = self
         socket.connect()
         submitButtonLabel.isHidden = true
+        colourWheel.isHidden = true
     }
     
    //MARK: Actions
@@ -215,19 +207,36 @@ class DrawViewController: UIViewController, WebSocketDelegate {
         socket.write(data: jsonData)
     }
     
-    @IBAction func closeColorPicker(_ sender: Any) {
-        self.view.removeFromSuperview()
+    @IBAction func showColorPicker(_ sender: Any) {
+        colourWheel.isHidden = (colourWheel.isHidden == true) ? false : true
     }
     
-        @IBAction func paintRed(_ sender: Any) {
-        currentColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0).cgColor
+    
+   
+    @IBAction func paintPink(_ sender: UIButton) {
+        currentColor = UIColor(red: 1.0, green: 0.53, blue: 0.96, alpha: 1.0).cgColor
     }
     
     @IBAction func paintGreen(_ sender: Any) {
-         currentColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0).cgColor
+        currentColor = UIColor(red: 0.0, green: 1.0, blue: 0.20, alpha: 1.0).cgColor
+    }
+
+    @IBAction func paintBlue(_ sender: Any) {
+        currentColor = UIColor(red: 0.26, green: 0.53, blue: 0.96, alpha: 1.0).cgColor
+    }
+
+    @IBAction func paintRed(_ sender: Any) {
+        currentColor = UIColor(red: 1.0, green: 0.00, blue: 0.00, alpha: 1.0).cgColor
     }
     
-
-
+    @IBAction func paintBlack(_ sender: Any) {
+        currentColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.0).cgColor
+    }
+    
+    
+    @IBAction func paintYellow(_ sender: Any) {
+        currentColor = UIColor(red: 1.00, green: 1.00, blue: 0.00, alpha: 1.0).cgColor
+    }
+    
 }
 
