@@ -12,17 +12,14 @@ import Starscream
 
 
 class DrawViewController: UIViewController, WebSocketDelegate {
+    
     //MARK: Properties
     
     @IBOutlet weak var drawPage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var clear: UIButton!
     @IBOutlet var currentWord: UILabel!
-    
     @IBOutlet var clearButtonLabel: UIButton!
-    
-    
-    
     @IBAction func showColorPicker(_ sender: Any) {
         let colorPickerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "colorPickerId") as! ColorPickerViewController
         self.addChildViewController(colorPickerViewController)
@@ -41,13 +38,8 @@ class DrawViewController: UIViewController, WebSocketDelegate {
     var drawingAllowed = true
     var timerFlash = Timer()
     var counterFlash = 15
-
-   
-   
     @IBOutlet var counterLabel: UILabel!
-   
     @IBOutlet var submitButtonLabel: UIButton!
-    
     let wordArray: [String] = ["CAT","TEAPOT","APPLE","BALLOON","NICKELBACK","GIRAFFE","HEADPHONES","MOUNTAIN","ROCK CLIMBING","FAMILY","CELEBRATE","KITE","WORLD MAP","HUMAN MIND","PUG","TIME","SISTINE CHAPEL","CAKE"]
     var word: String?
     
@@ -118,8 +110,6 @@ class DrawViewController: UIViewController, WebSocketDelegate {
         }
     }
     
-   
-    
     var coordinatesArray = [[Float]]()
     
     
@@ -149,7 +139,6 @@ class DrawViewController: UIViewController, WebSocketDelegate {
         }
     }
     
-    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         moved = true
         if let touch = touches.first {
@@ -158,15 +147,11 @@ class DrawViewController: UIViewController, WebSocketDelegate {
             lastPoint = currentPoint
         }
     }
-    
-    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !moved {
             drawPicture(fromPoint: lastPoint, toPoint: lastPoint)
         }
     }
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -178,11 +163,22 @@ class DrawViewController: UIViewController, WebSocketDelegate {
     }
     
     @IBAction func backButton(_ sender: Any) {
-        performSegue(withIdentifier: "backButton", sender: sender )
+        performSegue(withIdentifier: "backButton", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showSubmitViewController" {
+            if let destination = segue.destination as? SubmitViewController {
+                destination.badText = self.nameLabel.text
+                
+            }
+        }
     }
     
     @IBAction func submitButton(_ sender: Any) {
         sendString()
+        performSegue(withIdentifier: "showSubmitViewController", sender: sender)
+        
     }
     
     func websocketDidConnect(_ socket: WebSocket) {
@@ -193,10 +189,7 @@ class DrawViewController: UIViewController, WebSocketDelegate {
     }
     
     public func websocketDidReceiveMessage(_ socket: Starscream.WebSocket, text: String) {
-     
-
     }
-    
     
     public func websocketDidReceiveData(_ socket: Starscream.WebSocket, data: Data) {
     
