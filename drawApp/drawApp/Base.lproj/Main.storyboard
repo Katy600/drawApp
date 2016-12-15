@@ -280,21 +280,26 @@
                                     <action selector="playButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="ecu-Ke-BjY"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Someone is guessing your drawing....." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z91-Zh-dpg">
-                                <rect key="frame" x="0.0" y="98" width="419" height="234"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Someone is guessing your drawing....." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z91-Zh-dpg">
+                                <rect key="frame" x="-2" y="126" width="419" height="234"/>
                                 <fontDescription key="fontDescription" name="dotty" family="dotty" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ftb-V2-4am">
-                                <rect key="frame" x="203" y="288" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ftb-V2-4am">
+                                <rect key="frame" x="197" y="382" width="20" height="20"/>
                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="z91-Zh-dpg" secondAttribute="trailing" constant="10" id="CWB-Cb-5uy"/>
+                            <constraint firstItem="z91-Zh-dpg" firstAttribute="leading" secondItem="eL6-30-VuL" secondAttribute="leading" constant="10" id="Hym-9G-Bxz"/>
+                            <constraint firstItem="Ftb-V2-4am" firstAttribute="leading" secondItem="eL6-30-VuL" secondAttribute="leadingMargin" constant="177" id="RB7-zP-ANJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ftb-V2-4am" secondAttribute="trailing" constant="177" id="mGi-N6-H9p"/>
+                            <constraint firstItem="z91-Zh-dpg" firstAttribute="top" secondItem="8p3-wS-IsL" secondAttribute="bottom" constant="106" id="yqY-YO-jJE"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="nameLabel" destination="z91-Zh-dpg" id="AWs-xp-qtb"/>
