@@ -150,14 +150,6 @@
                                     <segue destination="49e-Tb-3d3" kind="show" identifier="backButton" id="L3e-wh-rGV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUI-zE-gQt">
-                                <rect key="frame" x="319" y="220" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="RED"/>
-                                <connections>
-                                    <action selector="paintRed:" destination="NU5-Hi-tNp" eventType="touchUpInside" id="seX-fY-Vqp"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -236,6 +228,15 @@
                                         <state key="normal" image="done_button"/>
                                         <connections>
                                             <action selector="closeColorPicker:" destination="gDJ-5y-hk5" eventType="touchUpInside" id="cOK-vf-OF3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cs7-ZE-4WE">
+                                        <rect key="frame" x="34" y="42" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Red"/>
+                                        <connections>
+                                            <action selector="paintRed:" destination="gDJ-5y-hk5" eventType="touchUpInside" id="G8V-31-a8a"/>
+                                            <segue destination="NU5-Hi-tNp" kind="show" identifier="showDrawViewController2" id="xPL-rT-DNI"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -432,6 +433,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="L3e-wh-rGV"/>
+        <segue reference="xPL-rT-DNI"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
 </document>

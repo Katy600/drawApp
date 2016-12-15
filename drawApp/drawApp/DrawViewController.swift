@@ -144,11 +144,6 @@ class DrawViewController: UIViewController, WebSocketDelegate {
     }
     
     
-    @IBAction func paintRed(_ sender: Any) {
-        currentColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0).cgColor
-        
-    }
-    
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         moved = true

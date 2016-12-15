@@ -8,7 +8,10 @@
 
 import UIKit
 
+
+
 class ColorPickerViewController: UIViewController {
+     var currentColor = UIColor(red: 0.26, green: 0.53, blue: 0.96, alpha: 1.0).cgColor
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +29,19 @@ class ColorPickerViewController: UIViewController {
         self.view.removeFromSuperview()
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func paintRed(_ sender: Any) {
+        currentColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0).cgColor
+        performSegue(withIdentifier: "showDrawViewController2", sender: sender );
     }
-    */
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDrawViewController2" {
+            if let destination = segue.destination as? DrawViewController {
+                destination.currentColor = self.currentColor
+            }
+        }
+    }
+    
+    //MARK: Actions
+   
 }
