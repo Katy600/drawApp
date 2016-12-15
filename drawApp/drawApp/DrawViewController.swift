@@ -37,6 +37,7 @@ class DrawViewController: UIViewController, WebSocketDelegate {
     var drawingAllowed = true
     var timerFlash = Timer()
     var counterFlash = 3
+    var currentColor = UIColor(red: 0.26, green: 0.53, blue: 0.96, alpha: 1.0).cgColor
 
    
     @IBOutlet var counterLabel: UILabel!
@@ -131,7 +132,7 @@ class DrawViewController: UIViewController, WebSocketDelegate {
         context?.setBlendMode(CGBlendMode.color)
         context?.setLineCap(CGLineCap.round)
         context?.setLineWidth(5)
-        context?.setStrokeColor(UIColor(red: 0.26, green: 0.53, blue: 0.96, alpha: 1.0).cgColor)
+        context?.setStrokeColor(currentColor)
         
         context?.strokePath()
         
@@ -140,6 +141,12 @@ class DrawViewController: UIViewController, WebSocketDelegate {
          } else {
             return
         }
+    }
+    
+    
+    @IBAction func paintRed(_ sender: Any) {
+        currentColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0).cgColor
+        
     }
     
     
