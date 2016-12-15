@@ -34,6 +34,12 @@ class ColorPickerViewController: UIViewController {
         performSegue(withIdentifier: "showDrawViewController2", sender: sender );
     }
     
+    
+    @IBAction func paintGreen(_ sender: Any) {
+        currentColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0).cgColor
+        performSegue(withIdentifier: "showDrawViewController2", sender: sender );
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDrawViewController2" {
             if let destination = segue.destination as? DrawViewController {
