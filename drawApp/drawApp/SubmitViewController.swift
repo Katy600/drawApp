@@ -18,7 +18,7 @@ class SubmitViewController: UIViewController {
     //MARK: Actions
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = "\(badText!), Your drawing \n has been sent! "
+        nameLabel.text = "\(badText!), your drawing \n has been sent! "
         print(badText!)
 
         // Do any additional setup after loading the view.

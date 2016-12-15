@@ -61,10 +61,11 @@ class DrawViewController: UIViewController, WebSocketDelegate {
     
     func updateTimer() {
         if counter == 0 {
-            timer.invalidate()
-            counterLabel.text = String("Time's up!")
-            changeViewOfButtons()
             timerFlash.invalidate()
+            timer.invalidate()
+            counterLabel.text = "Time's up!"
+            changeViewOfButtons()
+         
    
         } else{
          

@@ -132,7 +132,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Pr-LP-NfC">
-                                <rect key="frame" x="126" y="81" width="177" height="39"/>
+                                <rect key="frame" x="89" y="81" width="226" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="129" id="bdx-66-wi0"/>
                                 </constraints>
@@ -287,13 +287,14 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ftb-V2-4am">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ftb-V2-4am">
                                 <rect key="frame" x="197" y="382" width="20" height="20"/>
                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="bOD-3r-Psv" firstAttribute="top" secondItem="Ftb-V2-4am" secondAttribute="bottom" constant="285" id="7VD-zK-uc1"/>
                             <constraint firstAttribute="trailing" secondItem="z91-Zh-dpg" secondAttribute="trailing" constant="10" id="CWB-Cb-5uy"/>
                             <constraint firstItem="z91-Zh-dpg" firstAttribute="leading" secondItem="eL6-30-VuL" secondAttribute="leading" constant="10" id="Hym-9G-Bxz"/>
                             <constraint firstItem="Ftb-V2-4am" firstAttribute="leading" secondItem="eL6-30-VuL" secondAttribute="leadingMargin" constant="177" id="RB7-zP-ANJ"/>
