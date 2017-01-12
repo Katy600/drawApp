@@ -1,6 +1,7 @@
-# drawApp
+# Drawsome
+Drawsome is an iOS multi-player drawing app that allows friends to draw pictures and send them to one another to guess. It is written in Swift 3 using XCode8 and WebSockets.
 
-## User stories
+## Project User stories
 
 ```
 As a User
